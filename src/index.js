@@ -4,6 +4,6 @@ import './index.css';
 import HelloWord from './helloWorld';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<HelloWord name='react'/>, document.getElementById('root'));
+ReactDOM.render(<HelloWord name1='react' name2='vue'/>, document.getElementById('root'));
 
 serviceWorker.unregister();
