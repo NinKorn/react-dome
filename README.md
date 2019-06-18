@@ -91,3 +91,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 `我们在实际开发中，常常需要通过ajax获取数据，而数据请求的这个行为，则最适合放在componentDidMount中来执行。`
 
 ## 组件之间的交互
+### 父子交互
+    App.js父组件 Dialog.jsx 子组件 Button.jsx 子组件
+    情景 在点击Button组件按钮后获取数据 弹出模态框 此时Button不能点击
+    在父组件中state  loading 控制按钮中的动画 并将button设置为disable 将dialog 设为true 模态框弹出
+`不到万不得已，并不建议使用react-redux，除非你的项目确实非常庞大了，需要管理的状态非常多了，已经不得不使用，一定要记住，react-redux这类状态管理器是最后的选择`
+
+## http请求
+    安装axios
