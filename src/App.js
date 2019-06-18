@@ -19,6 +19,7 @@
 import React, { Component } from 'react';
 import Button from './Button';
 import Dialog from './Dialog';
+import News from './News';
 import './style.css';
  
 class App extends Component {
@@ -67,6 +68,7 @@ class App extends Component {
             <div className="app-wrap">
                 <Button loadingButton={ loading } submitButton={ this.submit }>提交</Button>
                 { dialog && <Dialog message={ message } close={ this.close } /> }
+                <News></News>
             </div>
         )
     }
