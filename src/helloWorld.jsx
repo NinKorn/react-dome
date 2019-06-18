@@ -6,6 +6,7 @@ class HelloWord extends Component {
         isfalg: true
     }
     clickHander = () => {
+        console.log(this.refs,'refs');
         if (this.state.isfalg) {
             this.setState({
                 name: this.props.name1,
@@ -19,10 +20,13 @@ class HelloWord extends Component {
         }
 
     }
+    refCallBack = (e) => {
+        console.log(e,'e');
+    }
 
     render() {
         return (
-            <div onClick={this.clickHander}> 
+            <div onClick={this.clickHander} ref={ this.refCallBack } className="name" > 
                 Hello! 我是
                 <h2>{this.state.name}</h2>
             </div>
