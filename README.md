@@ -107,3 +107,39 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ## react路由
     react-router 4.0 
     模块化路由
+
+## 状态管理
+### 下载mobx mobx-react
+``` 1.定义你的状态并使其可观察 ```
+import {observable} from 'mobx';
+
+var appState = observable({
+    timer: 0
+});
+``` 2.创建一个响应状态更改的视图 ```
+import {observer} from 'mobx-react';
+
+@observer
+class TimerView extends React.Component {
+    render() {
+        return (
+            <button onClick={this.onReset.bind(this)}>
+                Seconds passed: {this.props.appState.timer}
+            </button>
+        );
+    }
+
+    onReset() {
+        this.props.appState.resetTimer();
+    }
+};
+
+ReactDOM.render(<TimerView appState={appState} />, document.body);
+``` 3.修改状态 ```
+appState.resetTimer = action(function reset() {
+    appState.timer = 0;
+});
+
+setInterval(action(function tick() {
+    appState.timer += 1;
+}), 1000);

@@ -1,6 +1,27 @@
 import React, { Component } from 'react'
+import {observable} from 'mobx';
+import {observer} from 'mobx-react';
 
+var appState = observable({
+    timer: 0
+});
+
+appState.incre = () => {
+    this.timer ++ ;
+}
+
+appState.decre = () => {
+    this.timer -- ;
+}
+
+@observer
 class Home extends Component {
+    handClickIn = () => {
+        appState.incre();
+    }
+    handClickDe = () => {
+        appState.decre();
+    }
     render() {
         return (
             <div>

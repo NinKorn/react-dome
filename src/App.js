@@ -18,6 +18,7 @@
 // --- 父子组件传值
 import React, { Component } from 'react';
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
+
 import routes from './assets/router';
 import Button from './Button';
 import Dialog from './Dialog';
@@ -25,6 +26,9 @@ import Dialog from './Dialog';
 // import News from './News';
 import './style.css';
 
+
+
+// @observer
 class App extends Component {
     state = {
         loading: false,
@@ -90,6 +94,7 @@ class App extends Component {
                 </Router>
             </div>
         )
+       
     }
 }
 
